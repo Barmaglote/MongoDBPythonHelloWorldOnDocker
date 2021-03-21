@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  mongosvc:
+    build: ./venv/mongo/.
+    image: barmaglote/mongo-svc:v1
+    ports:
+      - "27017:27017"
+    environment:
+      ENV: DEV
+    volumes:
+      - ./app:/app
+      - ./app/db:/data/db
